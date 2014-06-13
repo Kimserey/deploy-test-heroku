@@ -23,7 +23,7 @@ app.use( logfmt.requestLogger() );
 
 app.get( '/', function ( req, res ) {
 	res.header( 'Content-Type', 'text/html' );
-	res.end( '<h1>Hello world !</h1>' );
+	res.end( '<h1>Hello world !</h1><h2>Beautiful day!</h2>' );
 });
 
 server.listen(port, function () {
