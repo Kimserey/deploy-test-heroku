@@ -15,8 +15,9 @@ var
  express 	= require( 'express' ),
  app 		= express(),
  http 		= require( 'http' ),
- logfmt		= require( 'logfmt' );
- server 	= http.createServer( app );
+ logfmt		= require( 'logfmt' ),
+ server 	= http.createServer( app ),
+ port 		= Number(process.env.PORT || 3000);
 
 app.use( logfmt.requestLogger() );
 
@@ -25,6 +26,6 @@ app.get( '/', function ( req, res ) {
 	res.end( '<h1>Hello world !</h1>' );
 });
 
-server.listen(3000, function () {
-	console.log( 'Connected on %d', server.address().port );
+server.listen(port, function () {
+	console.log( 'Application started and connected on %d', server.address().port );
 });
